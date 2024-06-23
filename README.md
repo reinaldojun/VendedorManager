@@ -2,7 +2,7 @@
 Este projeto é uma aplicação de gerenciamento de vendedores, construída utilizando Spring Boot. A aplicação fornece uma API REST para criar, ler, atualizar e deletar vendedores, além de uma interface de documentação interativa usando Swagger.
 
 ## Requisitos
-- Java 11 ou superior
+- Java 17 ou superior
 - Maven
 - Como rodar a aplicação
 
