@@ -59,7 +59,7 @@ src/
 
 ### Diagrama de componentes
 
-![img_1.png](img_1.png)
+![img_1.png](src/main/resources/images/img_1.png)
 
 ## O que a Aplicação Faz
 
@@ -76,7 +76,7 @@ Cada operação é validada utilizando Swagger e Bean Validation para garantir a
 
 ### Swagger 
 
-![img_2.png](img_2.png)
+![img_2.png](src/main/resources/images/img_2.png)
 
 ## Exemplos de Curl para os Endpoints:
 
@@ -94,14 +94,14 @@ curl -X POST "http://localhost:8080/vendedores" -H "Content-Type: application/js
 }'
 ```
 
-![img_3.png](img_3.png)
+![img_3.png](src/main/resources/images/img_3.png)
 
 ### Obter Vendedor por ID:
 
 ```bash
 curl -X GET "http://localhost:8080/vendedores/{id}"
 ```
-![img_4.png](img_4.png)
+![img_4.png](src/main/resources/images/img_4.png)
 
 #### Substitua {id} pelo ID do vendedor desejado.
 
@@ -118,7 +118,7 @@ curl -X PUT "http://localhost:8080/vendedores/{id}" -H "Content-Type: applicatio
 "filialId": 1
 }'
 ```
-![img_5.png](img_5.png)
+![img_5.png](src/main/resources/images/img_5.png)
 
 
 ### Deletar Vendedor por ID:
@@ -126,7 +126,7 @@ curl -X PUT "http://localhost:8080/vendedores/{id}" -H "Content-Type: applicatio
 ```bash
 curl -X DELETE "http://localhost:8080/vendedores/{id}"
 ```
-![img_6.png](img_6.png)
+![img_6.png](src/main/resources/images/img_6.png)
 
 ## Padrões de Design Utilizados no Projeto
 
