@@ -8,8 +8,8 @@ Este projeto é uma aplicação de gerenciamento de vendedores, construída util
 
 ### 1. Clonar o repositório
 ```bash
-   git clone https://github.com/seu-usuario/vendedor-manager.git
-   cd vendedor-manager
+   git clone https://github.com/reinaldojun/VendedorManager.git
+   cd VendedoManager
 ```   
    
 ### 2. Compilar e rodar a aplicação
