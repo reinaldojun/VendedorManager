@@ -25,6 +25,7 @@ public class VendedorService {
         return vendedorResponseConverter.toDto(savedVendedor);
     }
 
+
     public VendedorResponseDTO getVendedor(Long id) {
         Optional<Vendedor> vendedor = vendedorRepository.findById(id);
         return vendedor.map(vendedorResponseConverter::toDto).orElse(null);

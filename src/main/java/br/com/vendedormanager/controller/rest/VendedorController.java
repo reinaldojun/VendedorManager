@@ -31,10 +31,10 @@ public class VendedorController {
                             schema = @Schema(implementation = VendedorRequestDTO.class),
                             examples = @ExampleObject(value = """
                                 {
-                                    "nome": "João Silva",
+                                    "nome": "Reinaldo Viana",
                                     "dataNascimento": "1980-01-01",
                                     "documento": "12345678901",
-                                    "email": "joao.silva@example.com",
+                                    "email": "reinaldo.viana@example.com",
                                     "tipoContratacao": "Outsourcing",
                                     "filialId": 1
                                 }
@@ -72,7 +72,7 @@ public class VendedorController {
                             schema = @Schema(implementation = VendedorRequestDTO.class),
                             examples = @ExampleObject(value = """
                                 {
-                                    "nome": "João Silva",
+                                    "nome": "Reinaldo Viana",
                                     "dataNascimento": "1980-01-01",
                                     "documento": "12345678901",
                                     "email": "reinaldo.viana@example.com",

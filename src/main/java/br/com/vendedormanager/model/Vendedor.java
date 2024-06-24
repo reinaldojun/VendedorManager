@@ -1,14 +1,13 @@
 package br.com.vendedormanager.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Date;
 
 @Entity
-@Getter
-@Setter
+@Data
+@NoArgsConstructor
 public class Vendedor {
 
     @Id

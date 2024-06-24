@@ -2,15 +2,12 @@ package br.com.vendedormanager.mapper;
 
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
 public interface BaseConverter<Entity, Dto> {
-
-	//@Autowired
-	ModelMapper modelMapper = new ModelMapper();
+	final ModelMapper modelMapper = ModelMapperConfig.getModelMapper();
 
 	default Class<Dto> getDtoClass() {
 		ParameterizedType type = (ParameterizedType) getClass().getGenericInterfaces()[0];
