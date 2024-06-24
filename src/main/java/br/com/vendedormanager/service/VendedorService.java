@@ -1,8 +1,10 @@
 package br.com.vendedormanager.service;
 
 import br.com.vendedormanager.converter.VendedorRequestConverter;
+import br.com.vendedormanager.converter.VendedorRequestUpdateConverter;
 import br.com.vendedormanager.converter.VendedorResponseConverter;
 import br.com.vendedormanager.dto.VendedorRequestDTO;
+import br.com.vendedormanager.dto.VendedorRequestUpdateDTO;
 import br.com.vendedormanager.dto.VendedorResponseDTO;
 import br.com.vendedormanager.model.Vendedor;
 import br.com.vendedormanager.repository.VendedorRepository;
@@ -17,6 +19,7 @@ public class VendedorService {
     private final VendedorRepository vendedorRepository;
     private final VendedorRequestConverter vendedorRequestConverter;
     private final VendedorResponseConverter vendedorResponseConverter;
+    private final VendedorRequestUpdateConverter vendedorRequestUpdateConverter;
 
     public VendedorResponseDTO createVendedor(VendedorRequestDTO vendedorDTO) {
         Vendedor vendedor = vendedorRequestConverter.toEntity(vendedorDTO);
@@ -31,14 +34,13 @@ public class VendedorService {
         return vendedor.map(vendedorResponseConverter::toDto).orElse(null);
     }
 
-    public VendedorResponseDTO updateVendedor(Long id, VendedorRequestDTO vendedorDTO) {
+    public VendedorResponseDTO updateVendedor(Long id, VendedorRequestUpdateDTO vendedorDTO) {
         if (!vendedorRepository.existsById(id)) {
             return null;
         }
         Vendedor vendedor = new Vendedor();
+        vendedor = vendedorRequestUpdateConverter.toEntity(vendedorDTO);
         vendedor.setId(id);
-        vendedor = vendedorRequestConverter.toEntity(vendedorDTO);
-
         Vendedor updatedVendedor = vendedorRepository.save(vendedor);
         return vendedorResponseConverter.toDto(updatedVendedor);
     }

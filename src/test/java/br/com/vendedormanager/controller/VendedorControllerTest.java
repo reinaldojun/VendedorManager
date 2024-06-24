@@ -2,6 +2,7 @@ package br.com.vendedormanager.controller;
 
 import br.com.vendedormanager.controller.rest.VendedorController;
 import br.com.vendedormanager.dto.VendedorRequestDTO;
+import br.com.vendedormanager.dto.VendedorRequestUpdateDTO;
 import br.com.vendedormanager.dto.VendedorResponseDTO;
 import br.com.vendedormanager.service.VendedorService;
 import org.junit.jupiter.api.BeforeEach;
@@ -77,7 +78,7 @@ public class VendedorControllerTest {
     @Test
     public void testUpdateVendedor() {
         // Mocking input DTO
-        VendedorRequestDTO requestDTO = new VendedorRequestDTO();
+        VendedorRequestUpdateDTO requestDTO = new VendedorRequestUpdateDTO();
         requestDTO.setNome("João Silva");
         // Mocking service response
         VendedorResponseDTO mockedResponse = new VendedorResponseDTO();
@@ -85,7 +86,7 @@ public class VendedorControllerTest {
         mockedResponse.setNome("João Silva");
 
         // Mocking service method
-        when(vendedorService.updateVendedor(anyLong(), any(VendedorRequestDTO.class))).thenReturn(mockedResponse);
+        when(vendedorService.updateVendedor(anyLong(), any(VendedorRequestUpdateDTO.class))).thenReturn(mockedResponse);
 
         // Invoking controller method
         ResponseEntity<VendedorResponseDTO> responseEntity = vendedorController.updateVendedor(1L, requestDTO);

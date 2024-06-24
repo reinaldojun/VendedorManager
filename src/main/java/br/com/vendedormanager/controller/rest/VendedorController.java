@@ -1,6 +1,7 @@
 package br.com.vendedormanager.controller.rest;
 
 import br.com.vendedormanager.dto.VendedorRequestDTO;
+import br.com.vendedormanager.dto.VendedorRequestUpdateDTO;
 import br.com.vendedormanager.dto.VendedorResponseDTO;
 import br.com.vendedormanager.service.VendedorService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -126,7 +127,7 @@ public class VendedorController {
                     )
             )
             @PathVariable Long id,
-            @Valid @RequestBody VendedorRequestDTO vendedorDTO) {
+            @Valid @RequestBody VendedorRequestUpdateDTO vendedorDTO) {
         VendedorResponseDTO updatedVendedor = vendedorService.updateVendedor(id, vendedorDTO);
         return new ResponseEntity<>(updatedVendedor, HttpStatus.OK);
     }
